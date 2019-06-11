@@ -6,21 +6,18 @@ require './game'
 
 
 # Game!
-
-p1 = Player.new "Matt"
-p2 = Player.new "Gin"
-
 newGame = Game.new
 
+puts "Enter Player1 Name:"
+p1Name = gets.chomp
+puts "Enter Player2 Name:"
+p2Name = gets.chomp
 
-until p1.health == 0 || p2.health == 0
-  newGame.continue()
-  newGame.turn(p1, p2, Number.new, Number.new)
-  newGame.score(p1, p2)
-  newGame.continue()
-  newGame.turn(p2, p1, Number.new, Number.new)
-  newGame.score(p1, p2)
-end
+p1 = Player.new "#{p1Name}"
+p2 = Player.new "#{p2Name}"
+
+
+newGame.startGame(p1, p2)
 
 newGame.gameResult(p1, p2)
 

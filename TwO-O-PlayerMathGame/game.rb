@@ -2,6 +2,7 @@
 class Game
 
   def turn currentPlayer, otherPlayer, a, b
+    puts "----- NEW TURN -----"
     puts "#{currentPlayer.name}'s turn: #{a.value} + #{b.value} = ?"
     result = gets.chomp
     puts a.value + b.value == result.to_i ?
@@ -13,8 +14,14 @@ class Game
     puts "#{p1.name}: #{p1.health}/3 vs #{p2.name}: #{p2.health}/3 \n "
   end
 
-  def continue
-    puts "----- NEW TURN -----"
+  def startGame p1, p2
+    until p1.health == 0 || p2.health == 0
+      turn(p1, p2, Number.new, Number.new)
+      score(p1, p2)
+
+      turn(p2, p1, Number.new, Number.new)
+      score(p1, p2)
+    end
   end
 
   def gameOver
