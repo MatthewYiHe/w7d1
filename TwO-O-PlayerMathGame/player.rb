@@ -6,4 +6,8 @@ class Player
     @health = 3
   end
 
+  # def -(otherPlayer)
+  #   @health - otherPlayer.health
+  # end
+
 end

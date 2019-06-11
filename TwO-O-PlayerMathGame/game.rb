@@ -30,6 +30,7 @@ class Game
   end
 
   def gameResult p1, p2
+    # p1 - p2
     if p1.health == p2.health
       puts "Game is tied!"
     elsif p1.health > 0
