@@ -1,11 +1,9 @@
 class Number
 
-  def chooseNumber
-    rand(1..20)
-  end
+  attr_reader :value
 
-  def sum a, b
-    a + b
+  def initialize
+    @value = rand(1..20)
   end
 
 end
